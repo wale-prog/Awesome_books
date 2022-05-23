@@ -1,25 +1,38 @@
 const title = document.querySelector('.title-input');
 const author = document.querySelector('.author-input');
-let books = JSON.parse('books', localStorage.getItem(books)) || [];
 const addbutton = document.querySelector('.add');
+const awesomeBooks = document.getElementById('awesome-books');
 
-function AddBooks(title, author){
+
+let books = JSON.parse(localStorage.getItem('books')) || [];
+
+const AddBooks = (title, author) => {
     books.push({
         title,
         author,
-    })
+    });
     localStorage.setItem('books', JSON.stringify(books))
+    return {title, author};
 }
 
 const createUI = ({title, author}) => {
-    const newBookDiv = document.createElement('div');
-    newBookDiv.setAttribute('class', 'new-books');
-    const topBooks = document.querySelector('#top-books');
-    topBooks.append(newBookDiv);
-    newBookDiv.innerHTML = `<p>${title}</p>
+    const bookContainer = document.createElement('div')
+    const newBookDiv = document.querySelector('.new-books')
+    bookContainer.innerHTML = ` <p>${title}</p>
     <p>${author}</p>
-    <button type="submit">Remove</button>
-    <hr class="line">`
+    <button id="remove-btn" type="submit">Remove</button>
+    <hr class="line"> `;
+    newBookDiv.append(bookContainer);
 }
 
-addbutton.addEventListener('submit', AddBooks())
+books.forEach(element => {
+    createUI(element)
+});
+
+awesomeBooks.onsubmit = (event)=>{
+    event.preventDefault();
+    const newBook = AddBooks(title.value, author.value);
+    createUI(newBook);
+    title.value = ''
+    author.value = ''
+}
