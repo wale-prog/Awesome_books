@@ -8,6 +8,14 @@
   }
   
   .line {
-    padding: 12px 0;
+    margin: 6px 0;
+    width: 375px;
   }
-  
+
+  .new-books{
+    margin-top: 12px;
+  }
+
+  .new-books p{
+    margin-top: 5px;
+  }
