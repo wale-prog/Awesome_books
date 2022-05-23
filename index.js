@@ -36,3 +36,16 @@ awesomeBooks.onsubmit = (event)=>{
     title.value = ''
     author.value = ''
 }
+
+document.addEventListener('click', (event)=>{
+    if (event.target.id.includes('remove-btn')){
+        const parentDiv = event.target.parentNode;
+        const removebookAuthor = event.target.previousElementSibling.textContent
+        books = books.filter((book) => {
+            return (removebookAuthor !== book.author)           
+        })
+        localStorage.setItem('books', JSON.stringify(books))
+        const newBookDiv = document.querySelector('.new-books');
+        newBookDiv.removeChild(parentDiv);
+    }
+})
