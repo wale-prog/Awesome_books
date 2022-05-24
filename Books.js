@@ -10,8 +10,8 @@ export default class Books {
     });
   }
 
-  removeBooks(author) {
-    this.author = author;
-    this.books = this.books.filter((book) => book.author !== author);
+  removeBooks(indexNum) {
+    this.indexNum = indexNum;
+    this.books = this.books.filter((item) => this.books.indexOf(item) !== indexNum);
   }
 }

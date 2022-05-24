@@ -11,6 +11,7 @@ const createUI = ({ title, author }) => {
   const bookContainer = document.createElement('div');
   bookContainer.setAttribute('class', 'collection');
   bookContainer.innerHTML = `<p>${title} by ${author}</p>
+  <p class="hidden">${title}</p>
   <p class="hidden">${author}</p>
     <button id="remove-btn" type="submit">Remove</button>`;
   newBookDiv.append(bookContainer);
@@ -31,8 +32,10 @@ awesomeBooks.onsubmit = (event) => {
 document.body.addEventListener('click', (event) => {
   if (event.target.id.includes('remove-btn')) {
     const parentDiv = event.target.parentNode;
-    const removebookAuthor = event.target.previousElementSibling.textContent;
-    library.removeBooks(removebookAuthor);
+    const btn = event.target;
+    const removebtns = document.querySelectorAll('#remove-btn');
+    const indexarr = [...removebtns].indexOf(btn);
+    library.removeBooks(indexarr);
     newBookDiv.removeChild(parentDiv);
     localStorage.setItem('books', JSON.stringify(library.books));
   }
