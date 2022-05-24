@@ -1,7 +1,7 @@
 const title = document.querySelector('.title-input');
 const author = document.querySelector('.author-input');
 const awesomeBooks = document.getElementById('awesome-books');
-
+const newBookDiv = document.querySelector('.new-books');
 let books = JSON.parse(localStorage.getItem('books')) || [];
 
 const AddBooks = (title, author) => {
@@ -28,12 +28,15 @@ books.forEach((element) => {
 });
 
 awesomeBooks.onsubmit = (event) => {
-  event.preventDefault();
-  const newBook = AddBooks(title.value, author.value);
-  createUI(newBook);
+  event.preventDefault(); 
+  newBookDiv.innerHTML = '';
+  library.addBooks(title.value, author.value);
+  library.books.forEach((item)=>createUI(item))
+  localStorage.setItem('books', JSON.stringify(library.books));
   title.value = '';
   author.value = '';
 };
+
 const removeBook = function(){
     document.body.addEventListener('click', (event) => {
         if (event.target.id.includes('remove-btn')) {
