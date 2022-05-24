@@ -8,14 +8,65 @@ body {
 }
 
 .line {
-  margin: 6px 0;
-  width: 375px;
+  margin: 6px 0;  
+  width: 20%;
+  margin: 36px auto;
+  border-bottom: 3px #000 solid;
 }
 
 .new-books {
   margin-top: 12px;
+  border: 4px solid #000;
+  width: 60%;
+  margin: 12px auto 0 auto;
 }
 
 .new-books p {
   margin-top: 5px;
+}
+
+.page-heading{ 
+  text-align: center;
+}
+
+.collection {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px;
+}
+
+.hidden {
+  display: none;
+}
+
+.new-books div:nth-child(odd){
+  background-color: #d3d3d3;
+}
+
+#awesome-books {
+  margin: 20px auto;
+  text-align: center;
+}
+
+.form-para {
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+}
+
+.add {
+  margin-right: -36%;
+  text-align: right;
+  padding: 2px;
+  box-shadow: 2px 2px;
+}
+
+#awesome-books input {
+  width: 40%;
+  margin-bottom: 8px;
+  border: 2px solid;
+}
+
+#remove-btn{
+  box-shadow: 4px 4px;
 }
