@@ -10,17 +10,32 @@
 </head>
 
 <body>
-  <section id="top-books">
-    <h2 class="page-heading">Awesome Books </h2>
-    <div class="new-books"></div>
-    <div class="line"></div>
-    <p class="form-para">Add a new book</p>
-    <form id="awesome-books">
-      <input type="text" required placeholder="Title" name="title" class="title-input"> <br>
-      <input type="text" required name="author" placeholder="Author" class="author-input"> <br>
-      <button class="add" type="submit">Add</button>
-    </form>
-  </section>
+  <div class="main-container">
+    <nav id="navbar">
+      <p>Awesome Books</p>
+      <ul class="nav-list">
+         <li class="nav-list-item"><a href="#">List</a></li>
+         <li class="nav-list-item"><a href="#">Add new</a></li>
+         <li class="nav-list-item"><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="date-display"></div>
+
+    <section id="top-books">
+
+      
+      <div class="new-books"></div>
+      <!-- <div class="line"></div> -->
+      <p class="form-para">Add a new book</p>
+
+      <form id="awesome-books">
+        <input type="text" required placeholder="Title" name="title" class="title-input"> <br>
+        <input type="text" required name="author" placeholder="Author" class="author-input"> <br>
+        <button class="add" type="submit">Add</button>
+      </form>
+    </section>
+
+  </div>
 
   <script src="index.js" type="module"></script>
 </body>
