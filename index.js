@@ -40,3 +40,14 @@ document.body.addEventListener('click', (event) => {
     localStorage.setItem('books', JSON.stringify(library.books));
   }
 });
+
+ const contactbtn = document.querySelector('.contact-btn');
+ const topbooks = document.querySelector('#top-books');
+ const contact = document.querySelector('.background');
+ const bookcollection = document.querySelector('.collection'); 
+
+ contactbtn.addEventListener('click', () => {
+  contact.classList.remove('hidden');
+  topbooks.classList.add('hideen');
+   bookcollection.classList.add('hidden'); 
+ });
