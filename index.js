@@ -40,3 +40,53 @@ document.body.addEventListener('click', (event) => {
     localStorage.setItem('books', JSON.stringify(library.books));
   }
 });
+
+const contact = document.querySelector('.contact');
+const list = document.getElementById('top-books');
+const addNew = document.querySelector('.add-new');
+const navList = document.querySelectorAll('.nav-list-item');
+
+for (let i = 0; i < navList.length; i += 1) {
+  navList[i].addEventListener('click', (event) => {
+    if (event.target.innerText === 'List') {
+      list.classList.remove('hidden');
+      contact.classList.add('hidden');
+      addNew.classList.add('hidden');
+    } else if (event.target.innerText === 'Add new') {
+      list.classList.add('hidden');
+      contact.classList.add('hidden');
+      addNew.classList.remove('hidden');
+    } else if (event.target.innerText === 'Contact') {
+      list.classList.add('hidden');
+      contact.classList.remove('hidden');
+      addNew.classList.add('hidden');
+    }
+  });
+}
+
+function timecomp(timeData) {
+  if (timeData.length < 2) {
+    timeData = `0${timeData}`;
+  }
+  return timeData;
+}
+
+const dateDisplay = document.querySelector('.date-display');
+const datePara = document.createElement('p');
+function manageDate(datePara) {
+  const date = new Date();
+  const myDay = ['Sun', 'Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat'];
+  const dayOfWeek = date.getDay();
+  const dayOfMonth = date.getDate();
+  const year = date.getFullYear();
+  const hour = date.getHours();
+  let second = date.getSeconds();
+  let minutes = date.getMinutes();
+  const min = minutes.toString().split('').join('');
+  const sec = second.toString().split('').join('');
+  minutes = timecomp(min);
+  second = timecomp(sec);
+  datePara.textContent = `${myDay[dayOfWeek]} May ${dayOfMonth}, ${year} ${hour}:${minutes} ${second}`;
+  dateDisplay.appendChild(datePara);
+}
+setInterval(() => manageDate(datePara), 1000);

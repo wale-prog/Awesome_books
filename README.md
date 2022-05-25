@@ -49,9 +49,11 @@
 
 ## Author2
 
-👤 ****
+👤 **Abdelrahman Mohamed**
 
 - GitHub: [@Abdo9826](https://github.com/Abdo9826)
+- LinkedIn: [@abdelruhman mihamed](https://www.linkedin.com/in/abdelruhman-mihamed-a42667179/
+)
 
 
 ## 🤝 Contributing

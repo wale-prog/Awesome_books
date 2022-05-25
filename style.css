@@ -14,9 +14,9 @@ body {
 }
 
 .new-books {
-  border: 4px solid #000;
-  width: 60%;
-  margin: 12px auto 0 auto;
+  border: 3px solid #000;
+  width: 80%;
+  margin: 12px auto 48px auto;
 }
 
 .new-books p {
@@ -42,29 +42,100 @@ body {
 }
 
 #awesome-books {
-  margin: 20px auto;
-  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .form-para {
   font-weight: bold;
-  font-size: 20px;
+  font-size: 24px;
   text-align: center;
 }
 
 .add {
-  margin-right: -36%;
-  text-align: right;
+  width: 48px;
   padding: 2px;
+  margin-left: 42%;
   box-shadow: 2px 2px;
 }
 
+.date-display {
+  display: flex;
+  justify-content: end;
+  width: 88%;
+  margin: 12px auto;
+}
+
 #awesome-books input {
-  width: 40%;
-  margin-bottom: 8px;
-  border: 2px solid;
+  width: 50%;
+  height: 24px;
+  margin-bottom: 12px;
+  border: 3px solid #333;
 }
 
 #remove-btn {
   box-shadow: 4px 4px;
+}
+
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  border: 3px solid #333;
+  padding: 12px;
+  margin: 12px auto 0 auto;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+}
+
+.nav-list a {
+  text-decoration: none;
+  padding-right: 4px;
+  color: #000;
+}
+
+.nav-list-item {
+  margin-left: 12px;
+  border-right: 2px solid #000;
+}
+
+#footer {
+  border: 3px solid #333;
+  width: 88%;
+  margin: 12px auto;
+  padding: 12px;
+}
+
+.contact {
+  text-align: left;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.contact h2 {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.contact ul {
+  margin-left: 48px;
+  margin-top: 24px;
+  margin-bottom: 48px;
+}
+
+.page-para {
+  margin: 24px auto;
+  text-align: center;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.main-container {
+  width: 50%;
+  margin: 48px auto 0 auto;
 }

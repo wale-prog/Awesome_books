@@ -10,17 +10,48 @@
 </head>
 
 <body>
-  <section id="top-books">
-    <h2 class="page-heading">Awesome Books </h2>
-    <div class="new-books"></div>
-    <div class="line"></div>
-    <p class="form-para">Add a new book</p>
-    <form id="awesome-books">
-      <input type="text" required placeholder="Title" name="title" class="title-input"> <br>
-      <input type="text" required name="author" placeholder="Author" class="author-input"> <br>
-      <button class="add" type="submit">Add</button>
-    </form>
-  </section>
+  <div class="main-container">
+    <nav id="navbar">
+      <p>Awesome Books</p>
+      <ul class="nav-list">
+         <li class="nav-list-item"><a href="#">List</a></li>
+         <li class="nav-list-item"><a href="#">Add new</a></li>
+         <li class="nav-list-item"><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="date-display"></div>
+    
+    <section id="top-books"> 
+      <h3 class="page-para">All Awesome Books</h3>     
+      <div class="new-books"></div>   
+    </section>
+    <div class="add-new hidden">
+      <p class="form-para">Add a new book</p>
+      <form id="awesome-books">
+        <input type="text" required placeholder="Title" name="title" class="title-input"> <br>
+        <input type="text" required name="author" placeholder="Author" class="author-input"> <br>
+        <button class="add" type="submit">Add</button>
+      </form>
+    </div> 
+    
+    <div class="contact hidden"> 
+      <h2>Contact information</h2>
+      <p>Do you have any questions or inquiries or just want to say "Hello"?
+      <br> You can reach out to us!</p>
+      <ul> 
+        <li>Our e-mail: <a href="mailto:abodyalex1@gmail.com">Abdelrahman Mohamed</a> and <a
+        href="mailto:olapetanwale@outlook.com">Wale olapetan</a></li>
+        <li>Our phone Number: 004358634422</li>
+        <li>Our address: Reddington Avenue 42, 100321, Lagos, Nigeria"</li>
+      </ul> 
+    </div>
+
+    <footer id="footer">
+     <P>copyright &copy; Wale et Abdol, 2022</P>
+    </footer>
+    
+
+  </div>
 
   <script src="index.js" type="module"></script>
 </body>
